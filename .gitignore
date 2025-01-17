@@ -1,0 +1,60 @@
+# Archivos de configuración de entorno
+.env
+*.env
+
+# Directorios y archivos específicos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Archivos de bases de datos
+*.sqlite3
+
+# Archivos generados por el compilador de Python
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+*.eggs
+
+# Directorios específicos de Django
+/static/
+media/
+
+# Archivos de logs
+*.log
+
+# Archivos de pruebas
+*.bak
+*.swp
+
+# Carpeta de dependencias virtuales
+venv/
+env/
+.venv/
+ENV/
+*.venv/
+
+# Archivos de configuraciones locales de IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Archivos que contienen claves API o secretos
+secrets.json
+credentials.json
+.codegpt/
+
+
+.codegpt
+db.sqlite3
