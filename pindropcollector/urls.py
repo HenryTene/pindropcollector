@@ -20,4 +20,5 @@ from links import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.hello),
+    path('signup/', views.hello),
 ]
