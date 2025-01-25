@@ -8,17 +8,25 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'home.html')
 
+
 def signup(request):
     if request.method == 'GET':
         return render(request, 'signup.html', {
-        'form': UserCreationForm
+            'form': UserCreationForm
         })
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
-                user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
+                user = User.objects.create_user(
+                    username=request.POST['username'], password=request.POST['password1'])
                 user.save()
                 return HttpResponse('Usuario creado correctamente')
             except:
-                return HttpResponse('El usuario ya existe')
-    return HttpResponse('Password do not match')
+                return render(request, 'signup.html', {
+                    'form': UserCreationForm,
+                    'error': 'El usuario ya existe'
+                })
+    return render(request, 'signup.html', {
+        'form': UserCreationForm,
+        'error': 'Las contraseñas no coinciden'
+    })
